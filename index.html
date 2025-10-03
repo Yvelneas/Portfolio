@@ -4,17 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grignion Axel Portfolio</title>
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>Bienvenue sur le Portfolio Grignion Axel.</h1>
+        <h1>Axel - Étudiant en Informatique</h1>
+        <p>Passionné par la musique, l'informatique et les jeux vidéo</p>
     </header>
-    <main>
-        <h3>A propos de moi.</h3>
-        <p>Je suis un étudiant en L1 informatique qui apprends à créer une page web en HTML.</p>
-        <br>
-        
-    </main>
+
+    <nav>
+        <ul>
+        <li><a href="#profil">Profil</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#passions">Passions</a></li>
+        <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="profil">
+        <h2>À propos de moi</h2>
+        <p>Je suis Axel, étudiant en première année de licence informatique à  l'ULCO de Calais. Curieux, créatif et motivé, je m'intéresse à la programmation, aux systèmes, et à la création musicale.</p>
+    </section>
+
+    <section id="projets">
+    <h2>Mes projets</h2>
+    <ul>
+      <li><strong>Site Web Pokémon</strong> – <a href="starters.html" class="btn-vitrine">J'ai créé un site vitrine sur les starters de chaque génération.</a></li>
+      <li><strong>Mini-jeu Dark Souls</strong> – J'aimerai faire un prototype sur Unity inspiré des mécaniques de combat de Dark Souls.</li>
+    </ul>
+  </section>
+
+  <section id="passions">
+    <h2>Mes passions</h2>
+    <div class="passion">
+      <h3>🎵 Musique</h3>
+      <p>Je compose sur FL Studio et joue de la guitare électrique.</p>
+    </div>
+    <div class="passion">
+      <h3>💻 Informatique</h3>
+      <p>J’apprends le développement web, les bases de données et l’algorithmique.</p>
+    </div>
+    <div class="passion">
+      <h3>🎮 Jeux vidéo</h3>
+      <p>Fan de Pokémon depuis l’enfance et grand amateur de Dark Souls pour le challenge.</p>
+    </div>
+    <div class="passion">
+      <h3>🏀 Basket</h3>
+      <p>J’aime jouer entre amis et suivre les matchs NBA, surtout les playoffs.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+  <h2>Contact</h2>
+  <p>Tu peux me joindre directement par mail à <strong>axel.grignion@etu.univ-littoral.fr</strong> ou sur GitHub : <a href="https://github.com/Yvelneas" target="_blank">Mon GitHub</a></p>
+
+  <form>
+    <label for="nom">Nom :</label>
+    <input type="text" id="nom" name="nom" required>
+
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">Message :</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+
+    <button type="submit">Envoyer</button>
+  </form>
+</section>
+
+
+
+
 </body>
 </html>
 
