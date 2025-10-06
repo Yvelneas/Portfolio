@@ -8,9 +8,12 @@
 </head>
 <body>
     <header>
+      <div class="header-text">
         <h1>Axel - Étudiant en Informatique</h1>
         <p>Passionné par la musique, l'informatique et les jeux vidéo</p>
-    </header>
+      </div>
+      <img src="Image/kagami.jpg" alt="Photo de profil d'Axel" class="pp-header">
+  </header>
 
     <nav>
         <ul>
@@ -58,7 +61,7 @@
   <h2>Contact</h2>
   <p>Tu peux me joindre directement par mail à <strong>axel.grignion@etu.univ-littoral.fr</strong> ou sur GitHub : <a href="https://github.com/Yvelneas" target="_blank">Mon GitHub</a></p>
 
-  <form>
+  <form action="https://formsubmit.co/axel.grignion@etu.univ-littoral.fr" method="POST">
     <label for="nom">Nom :</label>
     <input type="text" id="nom" name="nom" required>
 
@@ -68,12 +71,13 @@
     <label for="message">Message :</label>
     <textarea id="message" name="message" rows="5" required></textarea>
 
+    <!-- Options cachées -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://tonsite.com/merci.html">
+
     <button type="submit">Envoyer</button>
   </form>
 </section>
-
-
-
 
 </body>
 </html>
