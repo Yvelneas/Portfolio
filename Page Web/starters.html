@@ -151,6 +151,26 @@
         <p>Coiffeton</p>
       </a>
 
+<button id="startMusic">🎵 Activer la musique</button>
+
+<audio id="bgMusic" loop hidden></audio>
+
+<script>
+  const musiques = ["OST/Arabelle.mp3", "OST/Port_Yoneuve.mp3","OST/Pavonnay.mp3"];
+
+  // Choisit une musique aléatoirement
+  const musiqueChoisie = musiques[Math.floor(Math.random() * musiques.length)];
+
+  const player = document.getElementById("bgMusic");
+  player.src = musiqueChoisie;
+
+  // Lance la musique après un clic (obligatoire pour l'autoplay)
+  document.getElementById("startMusic").addEventListener("click", () => {
+    player.play();
+    document.getElementById("startMusic").style.display = "none"; // cache le bouton après clic
+  });
+</script>
+
 </body>
 </html>
 

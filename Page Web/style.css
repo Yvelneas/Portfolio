@@ -9,7 +9,7 @@
 :root{
   --bg-1: #1e1e2f;
   --bg-2: #2c3e50;
-  --accent: #f39c12;
+  --accent: #e99517;
   --muted: rgba(255,255,255,0.08);
   --panel: rgba(255,255,255,0.05);
   --turquoise: #1abc9c;
@@ -55,16 +55,13 @@ header p {
   opacity: 0.95;
 }
 
-/* photo profil en losange (clip-path) */
+
 .pp-header {
   width: 120px;
   height: 120px;
   object-fit: cover;
-  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-  -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-  border: 4px solid var(--accent);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
-  background-color: #222;
+  border-radius: 50%; /* rend la pp ronde */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
   flex-shrink: 0;
 }
 
@@ -278,7 +275,7 @@ button[type="submit"]{
 }
 button[type="submit"]:hover{ background:#e67e22; transform: translateY(-2px); }
 
-/* ========== PROGRESS (exemple compétences) ========== */
+/* ========== PROGRESS ========== */
 progress {
   width: 100%;
   height: 14px;
@@ -291,7 +288,7 @@ progress {
 progress::-webkit-progress-value { background: var(--accent); }
 progress::-moz-progress-bar { background: var(--accent); }
 
-/* ========== SECTION DESSINS (nouveau) ========== */
+/* ========== SECTION DESSINS ========== */
 #dessins {
   position: relative;
   padding: 34px 18px;
@@ -399,32 +396,9 @@ footer {
 
 /* focus accessible */
 a:focus, button:focus, input:focus, textarea:focus {
-  outline: 3px solid rgba(243,156,18,0.18);
+  outline: 3px solid rgba(73, 71, 67, 0.18);
   outline-offset: 2px;
 }
 
-/* ========== RESPONSIVE ========== */
-@media (max-width: 980px) {
-  header { padding: 34px 18px; gap: 14px; }
-  .header-text { max-width: 66%; }
-  header h1 { font-size: 1.9rem; }
-  .pp-header { width: 100px; height: 100px; }
-  .galerie-dessins img { width: 240px; max-height: 380px; }
-  .galerie-dessins img.paysage { width: 210px; max-height: 300px; }
-  .galerie-dessins.grid-view { grid-template-columns: repeat(2, 1fr); }
-}
 
-@media (max-width: 768px) {
-  /* nav → colonne */
-  nav ul { flex-direction: column; gap: 12px; padding: 10px; }
-  /* header empilé */
-  header { flex-direction: column; align-items: center; text-align: center; padding: 28px 16px; }
-  .header-text { max-width: 100%; }
-  section { margin: 18px 12px; padding: 18px; }
-  /* galerie responsive : 1 colonne si grid-view */
-  .galerie-dessins.grid-view { grid-template-columns: 1fr; }
-  /* carousel images plus étroites sur petit écran */
-  .galerie-dessins img { width: 220px; max-height: 320px; }
-  .galerie-dessins img.paysage { width: 190px; max-height: 260px; object-fit: contain; }
-}
 
