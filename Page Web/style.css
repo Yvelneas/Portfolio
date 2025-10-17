@@ -1,0 +1,430 @@
+/* ========== RESET ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========== BASE ========== */
+:root{
+  --bg-1: #1e1e2f;
+  --bg-2: #2c3e50;
+  --accent: #f39c12;
+  --muted: rgba(255,255,255,0.08);
+  --panel: rgba(255,255,255,0.05);
+  --turquoise: #1abc9c;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, "Helvetica Neue", Arial;
+  background: linear-gradient(135deg, #1e1e2f, #2c3e50); /* ton fond principal */
+  color: #f0f0f0;
+  line-height: 1.6;
+  padding-bottom: 60px;
+}
+
+/* ========== HEADER ========== */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 48px 28px;
+  background: #34495e;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  border-bottom: 1px solid rgba(0,0,0,0.25);
+}
+
+/* texte du header */
+.header-text {
+  max-width: 72%;
+}
+header h1 {
+  font-size: 2.4rem;
+  margin-bottom: 8px;
+  color: var(--accent);
+  letter-spacing: -0.5px;
+}
+header p {
+  font-size: 1.05rem;
+  color: #ecf0f1;
+  opacity: 0.95;
+}
+
+/* photo profil en losange (clip-path) */
+.pp-header {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  border: 4px solid var(--accent);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+  background-color: #222;
+  flex-shrink: 0;
+}
+
+/* ========== NAVIGATION ========== */
+nav {
+  background: #2c3e50;
+  padding: 12px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-top: 1px solid rgba(255,255,255,0.02);
+}
+
+/* nav list */
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 34px;
+  list-style: none;
+  padding: 6px 14px;
+}
+
+/* nav links style + underline animation */
+nav a {
+  position: relative;
+  color: #f0f0f0;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: .2px;
+  padding: 6px 4px;
+  transition: color .25s ease;
+  outline: none;
+}
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 3px;
+  background: var(--accent);
+  transition: width .28s ease;
+}
+nav a:hover, nav a:focus {
+  color: var(--accent);
+}
+nav a:hover::after, nav a:focus::after {
+  width: 100%;
+}
+
+/* animation d'apparition des items du menu */
+nav li {
+  opacity: 0;
+  transform: translateY(-8px);
+  animation: fadeInNav .6s ease-out forwards;
+}
+nav li:nth-child(1){ animation-delay: .12s; }
+nav li:nth-child(2){ animation-delay: .24s; }
+nav li:nth-child(3){ animation-delay: .36s; }
+nav li:nth-child(4){ animation-delay: .48s; }
+
+@keyframes fadeInNav {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========== SECTIONS GÉNÉRALES ========== */
+main, section {
+  max-width: 980px;
+  margin: 34px auto;
+  padding: 18px;
+}
+
+/* panels */
+section {
+  background: #2b2b3a; /* gris foncé uniforme, sans transparence */
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+  padding: 26px;
+  margin: 34px auto;
+  max-width: 980px;
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeInSection .7s ease-out forwards;
+}
+
+/* délais d'apparition par position */
+section:nth-of-type(1){ animation-delay: .18s; }
+section:nth-of-type(2){ animation-delay: .32s; }
+section:nth-of-type(3){ animation-delay: .46s; }
+section:nth-of-type(4){ animation-delay: .60s; }
+
+@keyframes fadeInSection {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* les titres de sections */
+section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+  color: var(--accent);
+  display: inline-block;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 6px;
+  transition: text-shadow .28s ease;
+}
+section h2:hover { text-shadow: 0 0 8px var(--accent); }
+
+/* ========== PROJETS ========== */
+#projets ul { list-style: none; padding: 0; }
+#projets li { margin-bottom: 14px; padding-left: 18px; position: relative; }
+
+/* ========== PASSIONS ========== */
+.passion {
+  margin-bottom: 18px;
+  padding: 12px;
+  background: rgba(255,255,255,0.03);
+  border-left: 6px solid var(--accent);
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: fadeInPassion .6s ease-out forwards;
+  transition: transform .25s ease;
+}
+@keyframes fadeInPassion { to { opacity: 1; transform: translateY(0); } }
+.passion:nth-child(1){ animation-delay:.18s; }
+.passion:nth-child(2){ animation-delay:.32s; }
+.passion:nth-child(3){ animation-delay:.46s; }
+.passion:nth-child(4){ animation-delay:.60s; }
+
+.passion:hover { transform: translateY(0) scale(1.02); }
+
+.passion h3 {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+  position: relative;
+}
+.passion h3::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:3px;
+  background:var(--accent);
+  transition: width .34s ease;
+}
+.passion:hover h3::after { width:100%; }
+
+/* ========== BOUTON VITRINE ========== */
+.btn-vitrine {
+  display: inline-block;
+  padding: 10px 18px;
+  background-color: #252574;
+  color: #8bb2d6;
+  font-weight: 700;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color .28s ease, transform .18s ease;
+}
+.btn-vitrine:hover { background-color: #55026e; transform: translateY(-2px); }
+
+/* ========== CONTACT & LIENS ========== */
+#contact a {
+  color: var(--turquoise);
+  font-weight: 700;
+  text-decoration: none;
+  position: relative;
+}
+#contact a::after {
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-4px;
+  width:100%;
+  height:2px;
+  background: var(--turquoise);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .28s ease;
+}
+#contact a:hover { color: var(--accent); text-shadow: 0 0 6px var(--accent); }
+#contact a:hover::after { transform: scaleX(1); transform-origin: left; }
+
+/* FORMULAIRE */
+form {
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-top: 12px;
+}
+input[type="text"], input[type="email"], textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255,255,255,0.03);
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+}
+input:focus, textarea:focus { box-shadow: 0 0 0 3px rgba(243,156,18,0.12); }
+button[type="submit"]{
+  padding: 10px 14px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 800;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: transform .15s ease, background .18s ease;
+}
+button[type="submit"]:hover{ background:#e67e22; transform: translateY(-2px); }
+
+/* ========== PROGRESS (exemple compétences) ========== */
+progress {
+  width: 100%;
+  height: 14px;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(0,0,0,0.25);
+}
+progress::-webkit-progress-value { background: var(--accent); }
+progress::-moz-progress-bar { background: var(--accent); }
+
+/* ========== SECTION DESSINS (nouveau) ========== */
+#dessins {
+  position: relative;
+  padding: 34px 18px;
+  text-align: center;
+  overflow: visible;
+}
+
+/* Brush SVG derrière le titre (data-uri) */
+#dessins h2 {
+  font-size: 2rem;
+  color: #fff;
+  position: relative;
+  display:inline-block;
+  z-index: 2;
+  margin-bottom: 22px;
+}
+#dessins h2::before {
+  content: '';
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  width: 150%;
+  height: 1.2em;
+  transform: translate(-50%,-50%) rotate(-2deg);
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 80'><path d='M10,40 Q150,-20 390,40 Q150,100 10,40Z' fill='%23f39c12' opacity='0.55'/></svg>") no-repeat center/contain;
+  z-index: 1;
+  pointer-events: none;
+  filter: blur(.2px);
+}
+
+/* Galerie - layout par défaut : carousel horizontal */
+.galerie-dessins {
+  display:flex;
+  gap:18px;
+  padding: 12px;
+  overflow-x:auto;
+  scroll-snap-type: x mandatory;
+  align-items: center;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Images de la galerie - taille standard */
+.galerie-dessins img {
+  flex: 0 0 auto;
+  width: 280px;           /* taille standard pour les portraits */
+  max-height: 440px;
+  border-radius: 12px;
+  scroll-snap-align: center;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+  transition: transform .28s cubic-bezier(.2,.9,.2,1), box-shadow .25s;
+  display: block;
+  background: #111;
+}
+
+/* Hover léger */
+.galerie-dessins img:hover {
+  transform: scale(1.04) rotate(-1deg);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.6), 0 0 20px rgba(243,156,18,0.12);
+}
+
+/* Classe à ajouter manuellement pour les images paysage (ex : Roscoe)
+   <img src="..." class="paysage" ...>
+   Cela réduit la largeur et change object-fit pour ne pas écraser. */
+.galerie-dessins img.paysage {
+  width: 230px;
+  max-height: 320px;
+  object-fit: contain;
+}
+
+/* Option : grille (ajoute .grid-view sur .galerie-dessins)
+   - 2 colonnes sur desktop, 1 colonne sur mobile.
+   - Les images s'adaptent automatiquement */
+.galerie-dessins.grid-view {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  overflow: visible;
+  align-items: start;
+  padding: 10px;
+}
+.galerie-dessins.grid-view img {
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+  object-fit: contain;
+}
+
+/* Scrollbar minimaliste (pour le carousel) */
+.galerie-dessins::-webkit-scrollbar { height: 8px; }
+.galerie-dessins::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 10px;
+}
+.galerie-dessins::-webkit-scrollbar-track { background: rgba(255,255,255,0.06); }
+
+/* ========== AUTRES PETITS STYLES ========== */
+footer {
+  max-width: 980px;
+  margin: 20px auto;
+  text-align: center;
+  color: rgba(255,255,255,0.65);
+  font-size: .95rem;
+}
+
+/* focus accessible */
+a:focus, button:focus, input:focus, textarea:focus {
+  outline: 3px solid rgba(243,156,18,0.18);
+  outline-offset: 2px;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 980px) {
+  header { padding: 34px 18px; gap: 14px; }
+  .header-text { max-width: 66%; }
+  header h1 { font-size: 1.9rem; }
+  .pp-header { width: 100px; height: 100px; }
+  .galerie-dessins img { width: 240px; max-height: 380px; }
+  .galerie-dessins img.paysage { width: 210px; max-height: 300px; }
+  .galerie-dessins.grid-view { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  /* nav → colonne */
+  nav ul { flex-direction: column; gap: 12px; padding: 10px; }
+  /* header empilé */
+  header { flex-direction: column; align-items: center; text-align: center; padding: 28px 16px; }
+  .header-text { max-width: 100%; }
+  section { margin: 18px 12px; padding: 18px; }
+  /* galerie responsive : 1 colonne si grid-view */
+  .galerie-dessins.grid-view { grid-template-columns: 1fr; }
+  /* carousel images plus étroites sur petit écran */
+  .galerie-dessins img { width: 220px; max-height: 320px; }
+  .galerie-dessins img.paysage { width: 190px; max-height: 260px; object-fit: contain; }
+}
+
