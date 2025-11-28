@@ -1,4 +1,4 @@
-/* ===== Vidéo de fond ===== */
+/* Vidéo de fond */
 #background-video {
   position: fixed;
   top: 0;
@@ -11,13 +11,13 @@
   pointer-events: none;
 }
 
-/* ===== Structure de base ===== */
+/* Structure de base */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #ffffff;
-  background-color: rgba(0, 0, 0, 0.6); /* fallback si vidéo ne charge pas */
+  background-color: rgba(0, 0, 0, 0.6); /* solution de secours si vidéo ne charge pas */
   backdrop-filter: blur(3px); /* effet de flou derrière le texte */
   min-height: 100vh;
   display: flex;
@@ -80,7 +80,7 @@ main.pokemon-page p {
   text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
 }
 
-/* ===== Responsive ===== */
+/* Responsive */
 @media (max-width: 600px) {
   header h1 {
     font-size: 1.8rem;

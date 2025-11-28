@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grignion Axel Portfolio</title>
     <link href="style.css" rel="stylesheet">
+    
+    <!-- Import de polices externes (Google Fonts) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Import des icônes avec Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
     <header>
@@ -27,14 +33,14 @@
 
     <section id="profil">
         <h2>À propos de moi</h2>
-        <p>Je suis Axel, étudiant en première année de licence informatique à  l'ULCO de Calais. Curieux, créatif et motivé, je m'intéresse à la programmation, aux systèmes, et à la création musicale.</p>
+        <p>Je suis Axel, étudiant en première année de licence informatique à l'ULCO de Calais. Curieux, créatif et motivé, je m'intéresse à la programmation, aux systèmes, et à la création musicale.</p>
     </section>
 
     <section id="projets">
     <h2>Mes projets</h2>
     <ul>
       <li><strong>Site Web Pokémon</strong> – <a href="starters.html" class="btn-vitrine">J'ai créé un site vitrine sur les starters de chaque génération.</a></li>
-      <li><strong>Mini-jeu Dark Souls</strong> – J'aimerai faire un prototype sur Unity inspiré des mécaniques de combat de Dark Souls.</li>
+      <li><strong>Mini-jeu Dark Souls</strong> – J'aimerais faire un prototype sur Unity inspiré des mécaniques de combat de Dark Souls.</li>
     </ul>
   </section>
 
@@ -62,34 +68,38 @@
     <h2>Mes dessins</h2>
     <div class="galerie-dessins">
       <img src="Image/goldorak.jpg" alt="Dessin Goldorak">
-      <img src="Image/Roscoe.jpg" alt="Dessin Roscoe le chien" class="roscoe">
+      <img src="Image/Ma_Vegeta.jpg" alt="Dessin Majin Vegeta">
+      <!--<img src="Image/Roscoe.jpg" alt="Dessin Roscoe le chien" class="paysage">-->
       <img src="Image/sasuke.jpg" alt="Dessin Sasuke">
       <img src="Image/mewtwo.jpg" alt="Dessin Kagami">
     </div>
   </section>
 
-
-
   <section id="contact">
-  <h2>Contact</h2>
-  <p>Tu peux me joindre directement par mail à <strong>axel.grignion@etu.univ-littoral.fr</strong> ou sur GitHub : <a href="https://github.com/Yvelneas" target="_blank">Mon GitHub</a></p>
+    <h2>Contact</h2>
+    <p>Tu peux me joindre directement par mail à <strong>axel.grignion@etu.univ-littoral.fr</strong></p>
 
-  <form action="https://formsubmit.co/axel.grignion@etu.univ-littoral.fr" method="POST">
-    <label for="nom">Nom :</label>
-    <input type="text" id="nom" name="nom" required>
+    <form action="https://formsubmit.co/axel.grignion@etu.univ-littoral.fr" method="POST">
+      <label for="nom">Nom :</label>
+      <input type="text" id="nom" name="nom" required>
 
-    <label for="email">Email :</label>
-    <input type="email" id="email" name="email" required>
+      <label for="email">Email :</label>
+      <input type="email" id="email" name="email" required>
 
-    <label for="message">Message :</label>
-    <textarea id="message" name="message" rows="5" required></textarea>
+      <label for="message">Message :</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
 
-    <button type="submit">Envoyer</button>
-  </form>
-</section>
+      <button type="submit">Envoyer</button>
+    </form>
+  </section>
 
+  <!-- Icônes de réseaux sociaux -->
+  <footer>
+    <div class="social-icons">
+      <a href="https://github.com/Yvelneas" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.instagram.com/axelyvelneas" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://steamcommunity.com/id/yvelneas/" target="_blank" aria-label="Steam"><i class="fab fa-steam"></i></a>
+    </div>
+  </footer>
 </body>
 </html>
-
-
-
